@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Car service</title>    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+   <section class="form container">
+       <form>
+         <h3>Dodaj zadanie</h3>
+         <div class="form-row">            
+             <div class="form-group col-md-6">
+                 <label for="date-input">Data przyjęcia</label>
+                 <input type="date" class="form-control date-service" id="date-input">
+             </div>
+             <div class="form-group col-md-6">
+                 <label for="date-input">Numer rejestracyjny</label>
+                 <input type="text" class="form-control number-car" placeholder="Numer rejestracyjny">
+             </div>
+         </div>
+           <select name="service-car" class="form-control service-car" >
+               <option>przegląd techniczny</option>
+               <option>wymiana oleju</option>
+               <option>wymiana opon</option>
+               <option>naprawa opony</option>
+               <option>wymiana spalonej żarówki</option>
+               <option>wymiana klocków hamulcowym</option>
+               <option>napełnienie klimatyzacji</option>
+               <option>mycie samochodu</option>
+           </select>
+           <select name="worker-car" class="form-control worker-car">
+               <option>Marek</option>
+               <option>Jacek</option>
+               <option>Tomek</option>
+           </select>
+           <select name="time-service-car" class="form-control time-service-car">
+               <option>1 dzień</option>
+               <option>3 dni</option>
+               <option>7 dni</option>
+           </select>
+           
+       </form>
+   </section>
+    
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+<!--
+ZAŁOŻENIA
+
+CENTRUM USŁUG MOTORYZACYJNYCH
+
+1. Formularz dodający zadanie:
+- wybór usługi - lista wyboru
+
+    Usługi:    
+    - przegląd techniczny
+    - wymiana oleju
+    - wymiana opon
+    - naprawa opony
+    - wymiana spalonej żarówki
+    - wymiana klocków hamulcowym
+    - napełnienie klimatyzacji
+    - mycie samochodu
+    
+- numer rejestracyjny - pole input do ręcznego wpisywania
+  
+- priorytet zadania - lista wyboru 
+ 
+   - usługa od ręki
+   - w ciągu 24 godzin
+   - do 3-ch dni
+   
+- Pracownik wykonujący
+
+    - Marek
+    - Adam 
+    - Jacek
+    
+- przycisk dodający zadanie - buton
+
+POJAWIANIE SIĘ ZADAŃ:
+
+1. Każdy pracownik ma swój wiersz
+2. wiersze sa podzielone na 3 części tj. do zrobienia, w trakcie, zrobione
+3. Pojawiające się zadania musza mieć możliwosć zmiany statusu tj. (dwa przyciski)
+  - do zrobienia:
+     - w trakcie
+     - zrobione
+  - w trakcie
+     - do zrobienia
+     - zrobione
+  - zrobione
+     - do poprawy
+
+
+
+-->
