@@ -17,32 +17,45 @@
                  <label for="date-input">Data przyjęcia</label>
                  <input type="date" class="form-control date-service" id="date-input">
              </div>
+             
              <div class="form-group col-md-6">
-                 <label for="date-input">Numer rejestracyjny</label>
-                 <input type="text" class="form-control number-car" placeholder="Numer rejestracyjny">
+                 <label for="number-car">Numer rejestracyjny</label>
+                 <input type="text" class="form-control is-invalid" placeholder="Numer rejestracyjny" id="number-car" required>
              </div>
-         </div>
-           <select name="service-car" class="form-control service-car" >
-               <option>przegląd techniczny</option>
-               <option>wymiana oleju</option>
-               <option>wymiana opon</option>
-               <option>naprawa opony</option>
-               <option>wymiana spalonej żarówki</option>
-               <option>wymiana klocków hamulcowym</option>
-               <option>napełnienie klimatyzacji</option>
-               <option>mycie samochodu</option>
-           </select>
-           <select name="worker-car" class="form-control worker-car">
-               <option>Marek</option>
-               <option>Jacek</option>
-               <option>Tomek</option>
-           </select>
-           <select name="time-service-car" class="form-control time-service-car">
-               <option>1 dzień</option>
-               <option>3 dni</option>
-               <option>7 dni</option>
-           </select>
-           
+             
+             <div class="form-group col-md-12">
+                 <label for="service-car">Rodzaj usługi</label>
+                 <select name="service-car" class="form-control" id="service-car">
+                     <option value="przegląd techniczny">przegląd techniczny</option>
+                     <option value="wymiana oleju">wymiana oleju</option>
+                     <option value="wymiana opon">wymiana opon</option>
+                     <option value="naprawa opony">naprawa opony</option>
+                     <option value="wymiana spalonej żarówki">wymiana spalonej żarówki</option>
+                     <option value="wymiana klocków hamulcowym">wymiana klocków hamulcowym</option>
+                     <option value="napełnienie klimatyzacji">napełnienie klimatyzacji</option>
+                     <option value="mycie samochodu">mycie samochodu</option>
+                 </select>
+             </div>
+             
+             <div class="form-group col-md-6">
+                 <label for="worker-car">Mechanik</label>
+                 <select name="worker-car" class="form-control" id="worker-car">
+                     <option value="Marek">Marek</option>
+                     <option value="Jacek">Jacek</option>
+                     <option value="Tomek">Tomek</option>
+                 </select>
+             </div>
+             
+             <div class="form-group col-md-6">
+                 <label for="time-service-car">Czas wykonania usługi</label>
+                 <select name="time-service-car" class="form-control" id="time-service-car">
+                     <option value="1">1 dzień</option>
+                     <option value="3">3 dni</option>
+                     <option value="7">7 dni</option>
+                 </select>
+             </div>             
+         </div>    
+         <button class="btn btn-info">Zatwierdź zadanie</button>
        </form>
    </section>
     
