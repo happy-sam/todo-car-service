@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Car service</title>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,7 +21,7 @@
              
              <div class="form-group col-md-6">
                  <label for="number-car">Numer rejestracyjny</label>
-                 <input type="text" class="form-control is-invalid" placeholder="Numer rejestracyjny" id="number-car" required>
+                 <input type="text" class="form-control" placeholder="Numer rejestracyjny" id="number-car" required>
              </div>
              
              <div class="form-group col-md-12">
@@ -58,6 +59,177 @@
          <button class="btn btn-info">Zatwierdź zadanie</button>
        </form>
    </section>
+    
+<!-- -----  PRZYJĘTE DO REALIZACJI  -----  -->
+    
+    <section class="container list-clients">
+       <div class="list-todo">
+           <h3>Przyjęte zlecenia</h3>
+       </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Data przyjęcia zlecenia</th>
+                    <th>Numer rejestracyjny</th>
+                    <th>Rodzaj usługi</th>
+                    <th>Mechanik</th>
+                    <th>Czas wykonania usługi</th>
+                    <th>Aktualizacja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>przegląd techniczny</td>
+                    <td>Marek</td>
+                    <td>1 dzień</td>
+                    <td>
+                       <i title="Kasuj" class="fas fa-trash-alt"></i>
+                       <i title="W realizacji" class="fas fa-wrench"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2018-10-02</td>
+                    <td>WB 02468</td>
+                    <td>wymiana opon</td>
+                    <td>Jacek</td>
+                    <td>7 dni</td>
+                    <td>
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>
+                        <i title="W realizacji" class="fas fa-wrench"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>mycie samochodu</td>
+                    <td>Tomek</td>
+                    <td>3 dni</td>
+                    <td>
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>
+                        <i title="W realizacji" class="fas fa-wrench"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- -----  W TRAKCIE DO REALIZACJI  -----  -->
+
+    <section class="container list-clients-in-progress">
+        <div class="list-todo-in-progress">
+            <h3>Zlecenia w trakcie realizacji</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Data przyjęcia do realizacji</th>
+                    <th>Numer rejestracyjny</th>
+                    <th>Rodzaj usługi</th>
+                    <th>Mechanik</th>
+                    <th>Czas wykonania usługi</th>
+                    <th>Aktualizacja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>przegląd techniczny</td>
+                    <td>Marek</td>
+                    <td>1 dzień</td>
+                    <td>
+                        <i title="Zrobione" class="fas fa-check-circle"></i>
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2018-10-02</td>
+                    <td>WB 02468</td>
+                    <td>wymiana opon</td>
+                    <td>Jacek</td>
+                    <td>7 dni</td>
+                    <td>
+                        <i title="Zrobione" class="fas fa-check-circle"></i>
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>mycie samochodu</td>
+                    <td>Tomek</td>
+                    <td>3 dni</td>
+                    <td>
+                        <i title="Zrobione" class="fas fa-check-circle"></i>
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- -----  ZREALIZOWANE  -----  -->
+
+    <section class="container list-clients-finish">
+        <div class="list-todo-finish">
+            <h3>Zlecenia zrealizowane</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Data realizacji</th>
+                    <th>Numer rejestracyjny</th>
+                    <th>Rodzaj usługi</th>
+                    <th>Mechanik</th>                    
+                    <th>Aktualizacja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>przegląd techniczny</td>
+                    <td>Marek</td>                    
+                    <td>                        
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2018-10-02</td>
+                    <td>WB 02468</td>
+                    <td>wymiana opon</td>
+                    <td>Jacek</td>                    
+                    <td>                        
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2018-10-01</td>
+                    <td>KR 12345</td>
+                    <td>mycie samochodu</td>
+                    <td>Tomek</td>                    
+                    <td>                        
+                        <i title="Kasuj" class="fas fa-trash-alt"></i>                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
     
     
     

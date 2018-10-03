@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Proza+Libre:400,400i,500,500i,600,600i,700,700i,800,800i&subset=latin-ext");
+* {
+  font-family: "Proza Libre", sans-serif; }
+
+form {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+form h3 {
+  margin-bottom: 20px; }
+
+.list-clients {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 1px solid #4ec6d0;
+  border-radius: 10px;
+  margin-bottom: 20px; }
+  .list-clients .list-todo {
+    text-align: center;
+    padding-bottom: 10px; }
+  .list-clients table {
+    font-size: 12px; }
+    .list-clients table thead {
+      background: #4ec6d0; }
+
+.list-clients-in-progress {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 1px solid #ea9c00;
+  border-radius: 10px;
+  margin-bottom: 20px; }
+  .list-clients-in-progress .list-todo-in-progress {
+    text-align: center;
+    padding-bottom: 10px; }
+  .list-clients-in-progress table {
+    font-size: 12px; }
+    .list-clients-in-progress table thead {
+      background: #ea9c00; }
+
+.list-clients-finish {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 1px solid #db5755;
+  border-radius: 10px;
+  margin-bottom: 20px; }
+  .list-clients-finish .list-todo-finish {
+    text-align: center;
+    padding-bottom: 10px; }
+  .list-clients-finish table {
+    font-size: 12px; }
+    .list-clients-finish table thead {
+      background: #db5755; }
+
+table {
+  text-align: center; }
+
+tbody i {
+  font-size: 15px;
+  padding: 0 7.5px; }
+
+/*# sourceMappingURL=style.css.map */
