@@ -1,0 +1,44 @@
+Załozenia projektu.
+
+Projekt Serwisu mechaniki samochodowej, pozwalający na budowaniu bazy zleceń (na razie bez stałej bazy danych).
+
+0. Projekt ma bnazować na Bootstrapie 4 i bibliotece jQuery oraz na wykorzystaniu preprocesora sass.
+
+1. W fazie początkowej (przy wejsciu na stronę) wyświetla się:
+- nagłówek z logo + przycisk "DODAJ ZLECENIE" (na razie go brak)
+- lista aktywnych usług i wykonanych (jeżeli któraś z trzech list jest pusta to jest ukryta )
+
+2. Po kliknięciu przycisku "DODAJ ZLECENIE" pojawia się formularz w którym sa pola:
+- data przyjęcia - tu wpisujemy (lub wybieramy z kalendarza) datę kiedy klient zgłasza się w celu wykonania usługi - bez wypełnionego pola nie można wysłać formularza
+- numer rejestracyjny - wpisujemy numer pojazdu - bez wypełnionego pola nie można wysłać formularza
+- rodzaj usługi - wybieramy z wcześniej przygotowanej listy jedną z podstawowych usług
+- przycisk dodaj nową usługę do bazy - pozwala rozwinąć ukryte pole w celu dodania do listy "rodzaj usług" kolejną nie wymienioną na liscie usługę 
+- pole "wpisz nowy rodzaj usługi i dodaj ją do do bazy - pole pozwalające na wpisanie nowej usługi serwisowej - domyślnie pole ukryte
+- przycisk "dodaj" - dodaje do listy "rodzaj usługi" wpisaną usługę - domyślnie pole ukryte
+- Mechanik - wybór z listy pracownika odpowiedzialnego za zlecenie
+- Czas wykonania usługi - wybór z listy czasu wykonania usługi
+- przycisk "Zatwierdź zlecenie" - za jego pomoca powinno się dodać do tabeli "Przyjęte zlecenia" wpisane w formularzu dane. Dodane do tabeli dane (wiersz tabeli) powinny od razu się sortować po dacie dodania.
+
+3. Przyjęte zlecenia
+- Tabela, do której mają trafiać zatwierdzone zlecenia. 
+- do każdego wiersza w ostatniej kolumnie winny być dodane dwie ikony pozwalające na:
+    - usunięcie wipsu - po kliknieciu wpis usuwany jest z listy
+    - przeniesienie go do tabeli "zlecenia w trakcie realizacji" - po kliknięciu wpis przenoszony jest do tablicy "zlecenia w trakcie realizacji" wraz ze zmianą daty (data przyjęcia zlecenia) na datę momentu kliknięcia przeniesienia 
+- Tabela winna mieć możliwość sortowania po nagłówkach
+- w kolumnie "Lp" powinna pojawiać się liczba automatycznie i nie mająca wpływu na sortowanie - zawsze rosnąco
+
+4. Zlecenia w trakcie realizacji
+- Tabela do której mają trafiać przeniesione wiersze z tabeli "przyjęte zlecenia"
+- do każdego wiersza w ostatniej kolumnie winny być dodane dwie ikony pozwalające na:
+    - usunięcie wipsu - po kliknieciu wpis usuwany jest z listy
+    - przeniesienie go do tabeli "zlecenia zrealizowane" - po kliknięciu wpis przenoszony jest do tablicy "zlecenia zrealizowane" wraz ze zmianą daty (data przyjęcia do realizacji) na datę momentu kliknięcia przeniesienia 
+- Tabela winna mieć możliwość sortowania po nagłówkach
+- domyślnie tabela winna byc posortowana kolumną "czas wykonania usługi" licząc od najkrótszego czasu
+
+5. Zlecenia zrealizowane
+- Tabela do której mają trafiać przeniesione wiersze z tabeli "Zlecenia w trakcie realizacji"
+- do każdego wiersza w ostatniej kolumnie winna być dodana jedna ikona pozwalające na:
+- usunięcie wipsu - po kliknieciu wpis usuwany jest z listy
+- Tabela winna mieć możliwość sortowania po nagłówkach
+
+
