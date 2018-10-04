@@ -1,5 +1,9 @@
 Załozenia projektu.
 
+Projekt Serwisu mechaniki samochodowej, pozwalający na budowaniu bazy zleceń (na razie bez stałej bazy danych).
+
+0. Projekt ma bnazować na Bootstrapie 4 i bibliotece jQuery oraz na wykorzystaniu preprocesora sass.
+
 1. W fazie początkowej (przy wejsciu na stronę) wyświetla się:
 - nagłówek z logo + przycisk "DODAJ ZLECENIE" (na razie go brak)
 - lista aktywnych usług i wykonanych (jeżeli któraś z trzech list jest pusta to jest ukryta )
