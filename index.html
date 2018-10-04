@@ -10,13 +10,13 @@
 </head>
 <body>
    
-   <section class="form container">
+   <section class="container form-client">
        <form>
-         <h3>Dodaj zadanie</h3>
+         <h3>Dodaj zlecenie</h3>
          <div class="form-row">            
              <div class="form-group col-md-6">
                  <label for="date-input">Data przyjęcia</label>
-                 <input type="date" class="form-control date-service" id="date-input">
+                 <input type="date" class="form-control date-service" id="date-input" required>                 
              </div>
              
              <div class="form-group col-md-6">
@@ -24,7 +24,7 @@
                  <input type="text" class="form-control" placeholder="Numer rejestracyjny" id="number-car" required>
              </div>
              
-             <div class="form-group col-md-12">
+             <div class="form-group col-md-9">
                  <label for="service-car">Rodzaj usługi</label>
                  <select name="service-car" class="form-control" id="service-car">
                      <option value="przegląd techniczny">przegląd techniczny</option>
@@ -35,8 +35,26 @@
                      <option value="wymiana klocków hamulcowym">wymiana klocków hamulcowym</option>
                      <option value="napełnienie klimatyzacji">napełnienie klimatyzacji</option>
                      <option value="mycie samochodu">mycie samochodu</option>
-                 </select>
+                 </select>                 
              </div>
+             
+             <div class="form-group col-md-3">
+                 <h6 class="add-service btn btn-info" id="add-service">Dodaj nowa usługę do bazy</h6>           
+             </div>             
+             
+             
+             
+             <div class="col-md-11 input-group mb-3 add-new-servis-input add-new-servis-hide" id="add-new-servis-input">         
+                 <input type="text" class="form-control new-dervice-input" placeholder="Wpisz nowy rodzaj usługi i dodaj ją do bazy" >
+             </div>             
+             
+             <div class="form-group col-md-1 add-new-servis-button add-new-servis-hide" id="add-new-servis-button">
+                <h6 class="add-new-service-btn btn btn-dark">Dodaj</h6>    
+             </div>
+             
+             
+             
+             
              
              <div class="form-group col-md-6">
                  <label for="worker-car">Mechanik</label>
@@ -56,7 +74,7 @@
                  </select>
              </div>             
          </div>    
-         <button class="btn btn-info">Zatwierdź zadanie</button>
+         <button class="btn btn-info">Zatwierdź zlecenie</button>
        </form>
    </section>
     
@@ -66,7 +84,7 @@
        <div class="list-todo">
            <h3>Przyjęte zlecenia</h3>
        </div>
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Lp.</th>
@@ -241,58 +259,3 @@
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
-<!--
-ZAŁOŻENIA
-
-CENTRUM USŁUG MOTORYZACYJNYCH
-
-1. Formularz dodający zadanie:
-- wybór usługi - lista wyboru
-
-    Usługi:    
-    - przegląd techniczny
-    - wymiana oleju
-    - wymiana opon
-    - naprawa opony
-    - wymiana spalonej żarówki
-    - wymiana klocków hamulcowym
-    - napełnienie klimatyzacji
-    - mycie samochodu
-    
-- numer rejestracyjny - pole input do ręcznego wpisywania
-  
-- priorytet zadania - lista wyboru 
- 
-   - usługa od ręki
-   - w ciągu 24 godzin
-   - do 3-ch dni
-   
-- Pracownik wykonujący
-
-    - Marek
-    - Adam 
-    - Jacek
-    
-- przycisk dodający zadanie - buton
-
-POJAWIANIE SIĘ ZADAŃ:
-
-1. Każdy pracownik ma swój wiersz
-2. wiersze sa podzielone na 3 części tj. do zrobienia, w trakcie, zrobione
-3. Pojawiające się zadania musza mieć możliwosć zmiany statusu tj. (dwa przyciski)
-  - do zrobienia:
-     - w trakcie
-     - zrobione
-  - w trakcie
-     - do zrobienia
-     - zrobione
-  - zrobione
-     - do poprawy
-
-
-
--->
