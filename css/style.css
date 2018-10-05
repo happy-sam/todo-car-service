@@ -33,8 +33,10 @@ header {
   .form-client form h3 {
     margin-bottom: 20px; }
   .form-client form .add-service {
+    font-size: 15px;
     float: right;
-    margin-top: 30px; }
+    margin-top: 32px;
+    margin-bottom: 0px; }
 
 table {
   text-align: center; }

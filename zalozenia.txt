@@ -41,3 +41,20 @@ Projekt Serwisu mechaniki samochodowej, pozwalający na budowaniu bazy zleceń (
 - usunięcie wipsu - po kliknieciu wpis usuwany jest z listy
 - Tabela winna mieć możliwość sortowania po nagłówkach
 
+
+
+-----------------------------------------------
+JS.
+
+1. Sekcja z formularzem powinna byc ukryta przy uruchamianiu strony
+    - pobranie elementu - sekcja formularza
+    - domyslne ukrycie pobranego elementu
+2. Formularz powinien się pojawiać po nacisnięciu przycisku "DODAJ ZLECENIE"
+    - pobranie elementu - przycisk DODAJ ZLECENIE
+    - poblanie elementu - sekcja formularza
+    - przypisanie do przycisku zdarzenia click mającego na celu pokazania sekcji formularza
+3. Przy pojawieniu się formularza domyślnie winien  byc ukrytu input dodający nową usługę oraz przycisk DODAJ zatwierdzający dodanie usługi
+    - pobranie elementu - input z nową usługą
+    - pobranie elementu - przycisk DODAJ
+    - 
+
