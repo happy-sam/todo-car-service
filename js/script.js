@@ -3,6 +3,7 @@ var formDate, formNumberCar, formTypeService, formWorker, formTime, formNewServi
 var main = function(){
     formHide();
     newServiceHide();
+    deleteRecord();
 };
 
 //    Ukrywanie formularza przy uruchomieniu strony
@@ -45,8 +46,12 @@ var newServiceHide = function() {
         $("#table-todo-tbody tr:last").after("<tr><td>" + lengthTodoTbody + "</td><td>" + formDate + "</td><td>" + formNumberCar + "</td><td>" + formTypeService + "</td><td>" + formWorker + "</td><td>" + formTime + "</td> <td><i title='Kasuj' class='fas fa-trash-alt'></i><i title='W realizacji' class='fas fa-wrench'></i></td></tr>");        
     });  
 
-
-  
+//    Usuwanie wiersza z tabeli
+    var deleteRecord = function(){
+        $("body").on("click", ".fa-trash-alt", function(){        
+            $(this).closest("tr").remove();                    
+        });
+    };
 
 
 document.addEventListener('DOMContentLoaded', main);
