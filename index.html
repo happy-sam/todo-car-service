@@ -36,8 +36,9 @@
              </div>
              
              <div class="form-group col-md-9">
-                 <label for="service-car">Rodzaj usługi</label>
+                 <label for="service-car">Wybierz rodzaj usługi</label>
                  <select name="service-car" class="form-control" id="service-car">
+                     <option value="wybierz usługę"></option>
                      <option value="przegląd techniczny">przegląd techniczny</option>
                      <option value="wymiana oleju">wymiana oleju</option>
                      <option value="wymiana opon">wymiana opon</option>
@@ -54,12 +55,13 @@
              </div>                                 
              
              <div class="col-md-11 input-group mb-3 add-new-servis-input add-new-servis-hide" id="add-new-servis-input">         
-                 <input type="text" class="form-control new-device-input" placeholder="Wpisz nowy rodzaj usługi i dodaj ją do bazy" >
+                 <input type="text" class="form-control new-device-input" placeholder="Wpisz nowy rodzaj usługi i dodaj ją do bazy" id="new-device-input">
              </div>             
              
              <div class="form-group col-md-1 add-new-servis-button add-new-servis-hide" id="add-new-servis-button">
-                <h6 class="add-new-service-btn btn btn-dark">Dodaj</h6>    
+                 <button type="button" class="btn btn-dark add-new-service-btn">Dodaj</button>    
              </div>
+                         
                           
              <div class="form-group col-md-6">
                  <label for="worker-car">Mechanik</label>
@@ -73,15 +75,15 @@
              <div class="form-group col-md-6">
                  <label for="time-service-car">Czas wykonania usługi</label>
                  <select name="time-service-car" class="form-control" id="time-service-car">
-                     <option value="1">1 dzień</option>
-                     <option value="3">3 dni</option>
-                     <option value="7">7 dni</option>
+                     <option value="1 dzień">1 dzień</option>
+                     <option value="3 dni">3 dni</option>
+                     <option value="7 dni">7 dni</option>
                  </select>
              </div>             
          </div>    
-           <button class="btn btn-info" id="btn-add-record">Zatwierdź zlecenie</button>
+           <button type="button" class="btn btn-info" id="btn-add-record">Zatwierdź zlecenie</button>
        </form>
-       <div class="container" id="pole-testowe"></div>
+<!--       <div class="container" id="pole-testowe"></div>-->
    </section>
     
 <!-- -----  PRZYJĘTE DO REALIZACJI  -----  -->
@@ -90,7 +92,7 @@
        <div class="list-todo">
            <h3>Przyjęte zlecenia</h3>
        </div>
-        <table class="table table-hover">
+        <table class="table table-hover" id="table-todo">
             <thead>
                 <tr>
                     <th>Lp.</th>
@@ -102,8 +104,9 @@
                     <th>Aktualizacja</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="table-todo-tbody">
                 <tr>
+<!--
                     <td>1</td>
                     <td>2018-10-01</td>
                     <td>KR 12345</td>
@@ -114,30 +117,7 @@
                        <i title="Kasuj" class="fas fa-trash-alt"></i>
                        <i title="W realizacji" class="fas fa-wrench"></i>
                     </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2018-10-02</td>
-                    <td>WB 02468</td>
-                    <td>wymiana opon</td>
-                    <td>Jacek</td>
-                    <td>7 dni</td>
-                    <td>
-                        <i title="Kasuj" class="fas fa-trash-alt"></i>
-                        <i title="W realizacji" class="fas fa-wrench"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>2018-10-01</td>
-                    <td>KR 12345</td>
-                    <td>mycie samochodu</td>
-                    <td>Tomek</td>
-                    <td>3 dni</td>
-                    <td>
-                        <i title="Kasuj" class="fas fa-trash-alt"></i>
-                        <i title="W realizacji" class="fas fa-wrench"></i>
-                    </td>
+-->
                 </tr>
             </tbody>
         </table>

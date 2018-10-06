@@ -26,52 +26,27 @@ var newServiceHide = function() {
     });   
 
 //    Dodanie nowej usługi do lsty wszystkich rodzajów usług    
-    $("#add-new-service-btn").click(function(){
-//      1. Pobieramy wartość inputa i wstawiamy do zmiennej formNewService
-        var formNewService = $(".new-device-input").val();         
-        
+    $(".add-new-service-btn").click(function(){
+        var formNewService = $("#new-device-input").val();         
+        $("#service-car").append("<option>" + formNewService + "</option>");
+        $("#new-device-input").val("");
+        $(".add-new-servis-hide").toggle();
     });
     
+//    Pobieranie wszystkich danych z wypełnionego formularza i dodanie do tabeli "Przyjęte zlecenia"
+    $("#btn-add-record").click(function(event){        
+        var formDate = $("#date-input").val();        
+        var formNumberCar = $("#number-car").val();
+        var formTypeService = $("#service-car").val();
+        var formWorker = $("#worker-car").val();
+        var formTime = $("#time-service-car").val();
+        
+        var lengthTodoTbody = $("#table-todo-tbody tr").length;        
+        $("#table-todo-tbody tr:last").after("<tr><td>" + lengthTodoTbody + "</td><td>" + formDate + "</td><td>" + formNumberCar + "</td><td>" + formTypeService + "</td><td>" + formWorker + "</td><td>" + formTime + "</td> <td><i title='Kasuj' class='fas fa-trash-alt'></i><i title='W realizacji' class='fas fa-wrench'></i></td></tr>");        
+    });  
 
 
-
-
-
-
-
-
-
-
-
-//
-//var formTypeService = $("#service-car").val();
-//
-//    $("#btn-add-record").click(function(){        
-//        $("#pole-testowe").append("formTypeService.val()");
-//    });
-
-
-
-   
-
-
-//$(document).ready(function(){    
-    
-//    $("#add-new-service-btn").click(function(){        
-//        $(".add-new-servis-hide").hide();        
-//    });         
-//    
-//    var testy = $("#btn-add-record").click(function(event){        
-//        var formDate = $("#date-input").val();        
-//        var formNumberCar = $("#number-car").val();
-//        var formTypeService = $("#service-car").val();
-//        var formWorker = $("#worker-car").val();
-//        var formTime = $("#time-service-car").val();
-//        return formDate;       
-//    });         
-   
-            
-//});
+  
 
 
 document.addEventListener('DOMContentLoaded', main);
