@@ -4,8 +4,6 @@ var main = function(){
     formHide();
     newServiceHide();
     deleteRecord();
-    appendToRecord();
-    appendToFinish();
 };
 
 //    Ukrywanie formularza przy uruchomieniu strony
@@ -51,62 +49,9 @@ var newServiceHide = function() {
 //    Usuwanie wiersza z tabeli
     var deleteRecord = function(){
         $("body").on("click", ".fa-trash-alt", function(){        
-            $(this).closest("tr").remove();                                
-            $('#table-todo-tbody > tr').each(function(i){            
-                $(this).find('td:first-child').text(i);
-            });
-            $('#table-in-progress-tbody > tr').each(function(i){            
-                $(this).find('td:first-child').text(i);
-            });
-            $('#table-finish-tbody > tr').each(function(i){            
-                $(this).find('td:first-child').text(i);
-            });
+            $(this).closest("tr").remove();                    
         });
     };
-
-//    Przeniesienie wiersza z tabeli "Przyjęte zlecenia" do tabeli "zlecenia w trakcie realizacji"
-var appendToRecord = function(){
-    $("body").on("click", ".fa-wrench", function(){        
-        $(this).closest("tr").appendTo("#table-in-progress-tbody");    
-        var lengthInProgressTbody = $("#table-in-progress-tbody tr").length-1;        
-        $("#table-in-progress-tbody tr:last td:first").text(lengthInProgressTbody);
-        $("#table-in-progress-tbody tr:last td:last").html("<i title='Zrobione' class='fas fa-check-circle'></i><i title='Kasuj' class='fas fa-trash-alt'></i>");        
-        
-        var dateFinish = new Date();
-        function addZero(i) {
-            return (i < 10)? '0'+i : i;
-        }
-        var dateF = dateFinish.getFullYear() + "-" + addZero((dateFinish.getMonth()+1)) + "-" + addZero(dateFinish.getDate());                
-        $("#table-in-progress-tbody tr:last td:eq(1)").text(dateF);       
-        
-        $('#table-todo-tbody > tr').each(function(i){            
-            $(this).find('td:first-child').text(i);
-        });
-    });
-};
-
-
-//    Przeniesienie wiersza z tabeli "zlecenia w trakcie realizacji" do tabeli "zlecenia zlealizowane"
-var appendToFinish = function(){
-    $("body").on("click", ".fa-check-circle", function(){        
-        $(this).closest("tr").appendTo("#table-finish-tbody");    
-        var lengthInProgressTbody = $("#table-finish-tbody tr").length-1;        
-        $("#table-finish-tbody tr:last td:first").text(lengthInProgressTbody);
-        $("#table-finish-tbody tr:last td:eq(6)").remove();
-        
-        var dateFinish = new Date();
-        function addZero(i) {
-            return (i < 10)? '0'+i : i;
-        }
-        var dateF = dateFinish.getFullYear() + "-" + addZero((dateFinish.getMonth()+1)) + "-" + addZero(dateFinish.getDate());                
-        $("#table-finish-tbody tr:last td:eq(1)").text(dateF);        
-        
-        $('#table-in-progress-tbody > tr').each(function(i){            
-            $(this).find('td:first-child').text(i);
-        });
-        $("#table-finish-tbody tr:last td:last").html("<i title='Kasuj' class='fas fa-trash-alt'></i>");
-    });
-};
 
 
 document.addEventListener('DOMContentLoaded', main);
