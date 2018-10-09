@@ -1,40 +1,37 @@
 var formDate, formNumberCar, formTypeService, formWorker, formTime, formNewService;
 
 var main = function(){
-    formHide();
     newServiceHide();
     deleteRecord();
     appendToRecord();
     appendToFinish();
-};
-
-//    Ukrywanie formularza przy uruchomieniu strony
-var formHide = function() {
-    $(".form-client").hide(); 
-};
+}; 
 
 //    Odkryci formularza po liknięciu przycisku DODAJ ZLECENE
-    $(".btn-start").click(function(){        
+    $(".btn-start").click(addRecordTodo);
+    function addRecordTodo() {        
         $(".form-client").toggle();        
-    }); 
+    }; 
 
 //    Ukrywanie pola do dodania nowej usługi po kliknięciu przycisku DODAJ ZLECENIE
-var newServiceHide = function() {
+    var newServiceHide = function() {
     $(".add-new-servis-hide").hide();
 }
 
 //    Odkrycie pola input i przycisku dodaj do wstawiania nowych rodzajów usług po kliknięciu przycisku DOdaj nową usługę do bazy
-    $("#add-service").click(function(){        
+    $("#add-service").click(AddNewServiceHide);
+        function AddNewServiceHide(){        
         $(".add-new-servis-hide").toggle();
-    });   
+    };   
 
-//    Dodanie nowej usługi do lsty wszystkich rodzajów usług    
-    $(".add-new-service-btn").click(function(){
+//    Dodanie nowej usługi do listy wszystkich rodzajów usług    
+    $(".add-new-service-btn").click(addNewService);
+        function addNewService(){
         var formNewService = $("#new-device-input").val();         
         $("#service-car").append("<option>" + formNewService + "</option>");
         $("#new-device-input").val("");
         $(".add-new-servis-hide").toggle();
-    });
+    };
     
 //    Pobieranie wszystkich danych z wypełnionego formularza i dodanie do tabeli "Przyjęte zlecenia"
     $("#btn-add-record").click(function(event){        
@@ -76,9 +73,19 @@ var appendToRecord = function(){
         function addZero(i) {
             return (i < 10)? '0'+i : i;
         }
+        
         var dateF = dateFinish.getFullYear() + "-" + addZero((dateFinish.getMonth()+1)) + "-" + addZero(dateFinish.getDate());                
         $("#table-in-progress-tbody tr:last td:eq(1)").text(dateF);       
         
+        
+        var datawykonania = function(){
+            if ($("#table-in-progress-tbody tr:last td:eq(5)").val() == "1 dzień"){
+                dateF = (dateF) + 1;
+            } else{
+                "testowy else"
+            }
+        }
+                
         $('#table-todo-tbody > tr').each(function(i){            
             $(this).find('td:first-child').text(i);
         });
@@ -107,6 +114,10 @@ var appendToFinish = function(){
         $("#table-finish-tbody tr:last td:last").html("<i title='Kasuj' class='fas fa-trash-alt'></i>");
     });
 };
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', main);
