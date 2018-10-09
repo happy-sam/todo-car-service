@@ -76,16 +76,7 @@ var appendToRecord = function(){
         
         var dateF = dateFinish.getFullYear() + "-" + addZero((dateFinish.getMonth()+1)) + "-" + addZero(dateFinish.getDate());                
         $("#table-in-progress-tbody tr:last td:eq(1)").text(dateF);       
-        
-        
-        var datawykonania = function(){
-            if ($("#table-in-progress-tbody tr:last td:eq(5)").val() == "1 dzień"){
-                dateF = (dateF) + 1;
-            } else{
-                "testowy else"
-            }
-        }
-                
+  
         $('#table-todo-tbody > tr').each(function(i){            
             $(this).find('td:first-child').text(i);
         });
