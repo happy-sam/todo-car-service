@@ -29,7 +29,8 @@ header {
 .form-client {
   padding-top: 20px;
   padding-bottom: 20px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: none; }
   .form-client form h3 {
     margin-bottom: 20px; }
   .form-client form .add-service {
