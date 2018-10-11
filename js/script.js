@@ -41,7 +41,8 @@ var main = function(){
         var formWorker = $("#worker-car").val();
         var formTime = $("#time-service-car").val();
         
-        var lengthTodoTbody = $("#table-todo-tbody tr").length;        
+        var lengthTodoTbody = $("#table-todo-tbody tr").length;                
+        
         $("#table-todo-tbody tr:last").after("<tr><td>" + lengthTodoTbody + "</td><td>" + formDate + "</td><td>" + formNumberCar + "</td><td>" + formTypeService + "</td><td>" + formWorker + "</td><td>" + formTime + "</td> <td><i title='Kasuj' class='fas fa-trash-alt'></i><i title='W realizacji' class='fas fa-wrench'></i></td></tr>");        
     });  
 
@@ -64,6 +65,20 @@ var main = function(){
 //    Przeniesienie wiersza z tabeli "Przyjęte zlecenia" do tabeli "zlecenia w trakcie realizacji"
 var appendToRecord = function(){
     $("body").on("click", ".fa-wrench", function(){        
+        
+        var timeService = $(this).closest("tr").find("td:eq(5)").text();
+        console.log(timeService);
+        switch (timeService){
+            case "1 dzień":
+                daysService = 1;
+                break;
+            case "3 dni":
+                daysService = 3;
+                break;
+            default:
+                daysService = 7;
+        }
+        
         $(this).closest("tr").appendTo("#table-in-progress-tbody");    
         var lengthInProgressTbody = $("#table-in-progress-tbody tr").length-1;        
         $("#table-in-progress-tbody tr:last td:first").text(lengthInProgressTbody);
@@ -73,13 +88,20 @@ var appendToRecord = function(){
         function addZero(i) {
             return (i < 10)? '0'+i : i;
         }
-        
+                
         var dateF = dateFinish.getFullYear() + "-" + addZero((dateFinish.getMonth()+1)) + "-" + addZero(dateFinish.getDate());                
-        $("#table-in-progress-tbody tr:last td:eq(1)").text(dateF);       
-  
-        $('#table-todo-tbody > tr').each(function(i){            
-            $(this).find('td:first-child').text(i);
-        });
+        $("#table-in-progress-tbody tr:last td:eq(1)").html(dateF);     
+        
+        var dateAddToService = new Date();
+        var newDate = dateAddToService.setDate(dateAddToService.getDate() + daysService);
+        var newDateTd = new Date(newDate);
+                
+        $("#table-in-progress-tbody tr:last td:eq(5)").html(newDateTd.getFullYear() + "-" + addZero((newDateTd.getMonth()+1)) + "-" + addZero(newDateTd.getDate()));       
+        
+        
+//        $('#table-todo-tbody > tr').each(function(i){            
+//            $(this).find('td:first-child').text(i);
+//        });
     });
 };
 
@@ -105,10 +127,5 @@ var appendToFinish = function(){
         $("#table-finish-tbody tr:last td:last").html("<i title='Kasuj' class='fas fa-trash-alt'></i>");
     });
 };
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', main);
